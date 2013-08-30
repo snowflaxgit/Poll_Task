@@ -1,0 +1,74 @@
+
+<html  ng-app="myApp">
+<head>
+
+        <title>poll</title>    	
+        <link href="/stylesheets/style.css" rel="stylesheet" type="text/css">
+		<script src="/socket.io/socket.io.js"></script>
+        <script type="text/javascript" src="/javascripts/jquery-1.9.1.js"></script>
+		
+		 <script  type="text/javascript" src="/javascripts/jquery.hammer.js"> </script> 
+		 <script type="text/javascript" src="/javascripts/Chart.js"></script>	
+		<script type="text/javascript" src="/javascripts/angular.min.js"></script>
+        <script type="text/javascript" src="/javascripts/script.js"></script>
+		
+        
+</head>
+<body>
+
+<div id="tabs">
+  
+     
+		  
+       <ul>
+            <li class="active"><a href="#poll">POLL</a></li>
+            <li><a href="#result">RESULT</a></li>
+       </ul>
+		
+		
+        <div id="poll">
+           
+		   	    <form name="myForm" ng-controller="ChartCtrl">
+               	   <table>
+					 <b>Who is the best choice for PM?</b>
+					   
+					   <tr ng-repeat="user in users">						
+						  <td><input type="radio" name="gender"  ng-click="voting(user._id)"></td>
+						  <td>{{user.name}}</td>
+				     </tr>
+					  
+					  <tr>
+					     <td>
+						
+						   <input type="button" value="Save" id="save" ng-click="voting(1)">
+						
+						 </td>
+					  </tr> 
+					   
+				 </table>
+		     </form>
+        </div>
+        
+        
+		
+		<div id="result">
+      
+	  
+	                   <b>Who is the best choice for PM?</b>
+					
+		                <canvas id="myChart1" width="360" height="350">
+		               </canvas>
+			           					
+	    
+          </div>
+
+
+
+
+   
+	
+	
+</div>
+
+</body>
+</html>
