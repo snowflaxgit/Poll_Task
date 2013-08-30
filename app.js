@@ -1,4 +1,3 @@
-
 /**
  * Module dependencies.
  */
@@ -17,7 +16,7 @@ var Server = mongo.Server,
     BSON = mongo.BSONPure;
 
 // all environments
-app.set('port', process.env.PORT || 3010);
+app.set('port', process.env.PORT || 3670);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 app.use(express.favicon());
